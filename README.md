@@ -20,7 +20,7 @@ An example on how to use the CSC command:
 docker run --rm akrog/csc identity plugin-info -e tcp://192.168.1.12:50051
 ```
 
-If we want to run the CSC container as part of the Kubernetes pod where we have the CSI plugin, we should pass the CSI_ENDPOINT and replace the entrypoint and command with `tail` and `-f /dev/null` respectively in the manifest.  This will keep the container running so you can then use the `exec` command to run csc commands or jump into a shell.
+If we want to run the CSC container as part of the Kubernetes pod where we have the CSI plugin, we should pass the CSI_ENDPOINT and replace the entrypoint and command with `tail` and `-f /dev/null` in the manifest as `command` and `args` respectively.  This will keep the container running so you can then use the `exec` command to run csc commands or jump into a shell.
 
 Running commands from the shell (we don't need to provide then end point since we provided CSI_ENDPOINT):
 
