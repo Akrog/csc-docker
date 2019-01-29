@@ -17,7 +17,7 @@ The container behaves as the CSC command, so any CMD we pass it will behave as i
 An example on how to use the CSC command:
 
 ```
-docker run --rm akrog/csc identity plugin-info -e tcp://192.168.1.12:50051
+docker run --rm embercsi/csc:v1.0.0 identity plugin-info -e tcp://192.168.1.12:50051
 ```
 
 If we want to run the CSC container as part of the Kubernetes pod where we have the CSI plugin, we should pass the CSI_ENDPOINT and replace the entrypoint and command with `tail` and `-f /dev/null` in the manifest as `command` and `args` respectively.  This will keep the container running so you can then use the `exec` command to run csc commands or jump into a shell.
